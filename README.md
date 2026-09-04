@@ -1,16 +1,55 @@
-## Hi there 👋
+# Simohamed Amara — Developer & Digital Builder
 
-<!--
-**yopisimoni/yopisimoni** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+I build practical digital products at the intersection of **web development, automation, AI workflows, lead generation, and growth systems**.
 
-Here are some ideas to get you started:
+My work focuses on turning an idea or business problem into a working system: the interface, the workflow behind it, the analytics, and the iteration that follows.
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+## Selected work
+
+### MyFastOffer4U
+UK property seller information and lead-generation platform combining conversion-focused frontend development, SEO architecture, analytics, referral workflows, and operational tracking.
+
+Live project: https://myfastoffer4u.com
+
+### HUG Cafe QR Ordering
+Mobile-first café ordering experience designed around QR access, menu browsing, cart interactions, order confirmation, and an administrative workflow.
+
+### AI Tools Hub
+Community-oriented AI tools discovery prototype for finding, ranking, and discussing useful AI products.
+
+Repository: https://github.com/yopisimoni/ai-hub-tools
+
+### Aesthetic Social Studio
+Service-business validation project combining prospect research, personalized outreach, portfolio assets, landing-page development, and conversion tracking.
+
+Repository: https://github.com/yopisimoni/aesthetic-social-studio
+
+### Mouna Cosmetics
+Modern cosmetics storefront prototype built with Next.js, React, TypeScript, and Tailwind CSS.
+
+Repository: https://github.com/yopisimoni/mouna-cosmetics
+
+## What I work with
+
+- HTML, CSS, JavaScript
+- Next.js, React, TypeScript
+- Tailwind CSS
+- APIs and automation workflows
+- GitHub and GitHub Actions
+- Analytics, SEO, and conversion tracking
+- AI-assisted product and content workflows
+
+## Portfolio
+
+This repository powers my public portfolio:
+
+https://yopisimoni.github.io
+
+## Current focus
+
+Building small, useful systems that solve real business problems and can be tested with real users instead of remaining as ideas.
+
+---
+
+**Simohamed Amara**  
+Developer · Automation · AI Workflows · Digital Systems
