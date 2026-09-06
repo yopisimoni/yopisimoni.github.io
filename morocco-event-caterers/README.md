@@ -1,60 +1,133 @@
-# Morocco Event Caterers
+# Morocco Wedding Guide
 
-Multilingual event-caterer directory for **Khénifra, Fès and Meknès, Morocco**.
+A multilingual wedding discovery platform starting with **Khénifra, Fès and Meknès, Morocco**.
 
 Live path: `https://yopisimoni.github.io/morocco-event-caterers/`
 
-## What is included
+## Product direction
 
-- English, Arabic (RTL), French and Spanish UI
+This project is no longer just a caterer list. The long-term product is a Morocco wedding guide where couples — especially families planning from abroad — can discover local wedding professionals, compare them, contact them directly and contribute trustworthy feedback.
+
+The first live category is **wedding/event catering**. Future categories can include venues, photographers/video, décor/flowers, Neggafa, music/DJ, beauty, cakes and planners.
+
+## Current live pilot
+
+- English, Arabic (RTL), French and Spanish
+- Khénifra, Fès and Meknès live first
+- 25 initial catering/event listings
+- Premium editorial wedding presentation
 - Search by business name / area
-- City filters for Khénifra, Fès and Meknès
-- 25 initial event-caterer / wedding-service listings
-- Direct phone and Google Maps actions where details were available
-- Community review modal and rating display
-- SEO title, description, canonical URL and Schema.org ItemList markup
+- City filter
+- Sorting prepared for top rated, most reviewed and A–Z
+- Direct phone and Google Maps actions
+- Community ratings/reviews UI
+- Quick passwordless account flow prepared
+- Auth-gated review/comment, photo upload and report actions
 - Mobile responsive layout
-- Moderated Supabase review schema
-- Browser-only review fallback until the dedicated Supabase project is connected
+- SEO title, description, canonical URL and Schema.org structured data
 
-## Review architecture
+## Community trust rules
 
-`config.js` intentionally contains no backend credentials yet.
+Guests can browse, search, sort, read approved reviews and contact providers without an account.
 
-For production reviews:
+An account is required to:
 
-1. Create a dedicated Supabase project for this directory.
-2. Run `supabase/reviews.sql` in that project.
-3. Confirm RLS/security advisors.
-4. Put only the project's public URL and **publishable** key in `config.js`.
-5. Never place a `service_role` or secret key in this repository.
+- rate a provider
+- write a review/comment
+- upload a wedding photo
+- report incorrect or inappropriate information
 
-Public users can read only `approved` reviews and submit only `pending` reviews. They receive no browser permissions to update or delete rows.
+Community submissions are **pending by default** and require moderation before publication.
 
-## Listing policy
+Rankings are based on approved community star ratings and review counts. Paid placement must never silently change the star score or community ranking.
 
-The directory does not import third-party star ratings or reviews as its own rating. A business starts as `New` until this site's own approved community reviews exist.
+The project does not copy third-party reviews and present them as its own. A business starts as `New` until this platform has approved community feedback.
 
-Business contact information was researched from current public listings in September 2026. Always confirm details directly before booking.
+## Production backend
 
-### Main research sources
+`config.js` intentionally contains no production credentials yet.
 
-- Google/local business listings surfaced for Khénifra, Fès and Meknès
-- https://traiteur-meknes-mounirs.com/
-- https://touchedeviefes.com/
-- https://www.chhiouatefes.com/
-- https://www.telecontact.ma/annonceur/lux-atlas-events/9045462/khenifra.php
-- https://www.telecontact.ma/annonceur/deguste/3360577/khenifra.php
-- https://www.africabizinfo.com/fr-MA/traiteur-el-moutaouakil-0660-389807
-- https://www.mescadeaux.ma/annuaire/4-fes/11-mariage/11301363000-trouver-un-traiteur
+The prepared `supabase/reviews.sql` schema includes:
 
-## Next SEO expansion
+- authenticated-only review submissions
+- one review per account/provider
+- public read access only for approved reviews
+- moderated photo metadata
+- private image storage with RLS
+- authenticated reports
+- no browser permissions to self-approve, update or delete community records
 
-The next iteration should generate a permanent page for every caterer and dedicated city landing pages, for example:
+To activate production accounts and contributions:
+
+1. Create a dedicated Supabase project for Morocco Wedding Guide.
+2. Run `supabase/reviews.sql`.
+3. Run Supabase security/performance advisors and fix any findings.
+4. Configure the project Site URL / redirect URLs for GitHub Pages and later the final domain.
+5. Add only the public project URL and **publishable** key to `config.js`.
+6. Never put a `service_role`, secret key or privileged credential in this public repository.
+
+## Expansion strategy
+
+Do **not** create empty city SEO pages. Expand only when a city has enough genuine local listings to make the page useful.
+
+### Live pilot
+
+- Khénifra
+- Fès
+- Meknès
+
+### National roadmap
+
+- Casablanca
+- Rabat
+- Marrakech
+- Tanger
+- Agadir
+- Oujda
+- Tétouan
+- Kénitra
+- El Jadida
+- additional cities only after research coverage is strong enough
+
+Recommended rollout after the pilot proves useful:
+
+1. Casablanca
+2. Rabat
+3. Marrakech
+4. Tanger
+5. Agadir
+6. Oujda
+7. Tétouan
+8. Kénitra
+9. El Jadida
+
+## SEO architecture
+
+When profiles are ready, create permanent indexable routes such as:
 
 - `/morocco-event-caterers/khenifra/`
 - `/morocco-event-caterers/fes/`
 - `/morocco-event-caterers/meknes/`
 - `/morocco-event-caterers/fes/doreve-events/`
 
-That will give Google stronger pages for searches combining caterer names, city names, wedding catering and event catering terms.
+After the final domain is purchased, migrate these to clean branded routes while preserving redirects and canonicals.
+
+Each provider profile should eventually include its own photos, city/service area, services, languages, contact methods, approved community rating, approved reviews, report action and last-verified date.
+
+## Market reality
+
+There are already Morocco wedding directories and marketplaces. This project therefore should not compete as a generic list alone. Its differentiation should be:
+
+- diaspora-first multilingual experience
+- highly usable city pages
+- transparent on-site review ranking
+- moderated user photos and reports
+- strong local coverage beyond only the largest destination cities
+- clean provider profiles and direct contact
+- no fake ratings or invented verification badges
+
+## Listing policy
+
+Business contact information was researched from current public listings in September 2026. Details can change; users should confirm directly before booking.
+
+Main initial research sources included official provider websites, public local business listings, Telecontact, AfricaBizInfo and MesCadeaux directories.
