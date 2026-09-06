@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yopisimoni.github.io/morocco-event-caterers/sitemap.xml
