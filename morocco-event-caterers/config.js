@@ -1,9 +1,9 @@
 // Public frontend configuration only.
-// A Supabase publishable key is safe to use in browser code when RLS is correctly configured.
+// This project uses only a Supabase publishable key in browser code.
 // NEVER put a service_role key or secret key here.
 window.CATERER_APP_CONFIG = {
-  supabaseUrl: "",
-  publishableKey: ""
+  supabaseUrl: "https://zhoapmabrzhdqjphbqgy.supabase.co",
+  publishableKey: "sb_publishable_-oNdtRaYWhrmzsRtUY7YDQ_3xA3W7Si"
 };
 
 (()=>{
