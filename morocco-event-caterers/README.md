@@ -1,32 +1,35 @@
-# Morocco Wedding Guide
+# MarocVows
 
-A multilingual wedding discovery platform starting with **Khénifra, Fès and Meknès, Morocco**.
+**MarocVows** is a multilingual Morocco wedding discovery platform starting with **Khénifra, Fès and Meknès**.
 
-Live path: `https://yopisimoni.github.io/morocco-event-caterers/`
+Current pilot: `https://yopisimoni.github.io/morocco-event-caterers/`
+Owned brand domain: `https://www.marocvows.com/`
 
 ## Product direction
 
-This project is no longer just a caterer list. The long-term product is a Morocco wedding guide where couples — especially families planning from abroad — can discover local wedding professionals, compare them, contact them directly and contribute trustworthy feedback.
+MarocVows is not meant to be a generic wedding directory. The goal is a trusted local guide where couples — especially Moroccan families planning from abroad — can discover wedding professionals, compare useful local information, contact providers directly and later contribute genuine community experiences.
 
 The first live category is **wedding/event catering**. Future categories can include venues, photographers/video, décor/flowers, Neggafa, music/DJ, beauty, cakes and planners.
 
-## Current live pilot
+## Current pilot
 
 - English, Arabic (RTL), French and Spanish
-- Khénifra, Fès and Meknès live first
+- Khénifra, Fès and Meknès first
 - 25 initial catering/event listings
 - Premium editorial wedding presentation
 - Search by business name / area
 - City filter
 - Sorting prepared for top rated, most reviewed and A–Z
 - Direct phone and Google Maps actions
-- Community ratings/reviews UI
-- Quick passwordless account flow prepared
-- Auth-gated review/comment, photo upload and report actions
+- Providers begin as `New` — no invented ratings
+- Quick community-review UX prepared: star rating + fast experience highlights + optional short note
+- Passwordless email account flow prepared
+- Auth-gated review, photo and report actions prepared
 - Mobile responsive layout
-- SEO title, description, canonical URL and Schema.org structured data
+- Privacy, Terms, Community Guidelines, About and Contact pages in four languages
+- SEO title/description/canonical/Schema.org architecture
 
-## Community trust rules
+## Community trust model
 
 Guests can browse, search, sort, read approved reviews and contact providers without an account.
 
@@ -39,36 +42,49 @@ An account is required to:
 
 Community submissions are **pending by default** and require moderation before publication.
 
-Rankings are based on approved community star ratings and review counts. Paid placement must never silently change the star score or community ranking.
+Rankings are based on approved on-site star ratings and review counts. Paid promotion must never silently alter star scores or community ranking.
 
-The project does not copy third-party reviews and present them as its own. A business starts as `New` until this platform has approved community feedback.
+MarocVows does not copy third-party reviews and present them as its own. A provider starts as `New` until this platform has approved community feedback.
+
+## Review experience principle
+
+The review flow should feel comfortable and take roughly 30 seconds:
+
+1. choose an overall star rating;
+2. tap quick experience highlights such as great food, professional staff, punctuality, communication, value or areas to improve;
+3. optionally add one short detail that would help the next family.
+
+No essay is required. Only genuine first-hand experiences should be submitted.
 
 ## Production backend
 
-`config.js` intentionally contains no production credentials yet.
+A dedicated Supabase project named `morocco-wedding-guide` is provisioned in **Paris, France (`eu-west-3`)**.
 
-The prepared `supabase/reviews.sql` schema includes:
+The production schema includes:
 
 - authenticated-only review submissions
 - one review per account/provider
 - public read access only for approved reviews
 - moderated photo metadata
 - private image storage with RLS
-- authenticated reports
-- no browser permissions to self-approve, update or delete community records
+- authenticated private reports
+- no browser permission to self-approve community content
 
-To activate production accounts and contributions:
+Security advisor currently reports no security lints. The frontend intentionally keeps community data collection gated until the operator/privacy contact, CNDP formalities and Auth redirect configuration are complete.
 
-1. Create a dedicated Supabase project for Morocco Wedding Guide.
-2. Run `supabase/reviews.sql`.
-3. Run Supabase security/performance advisors and fix any findings.
-4. Configure the project Site URL / redirect URLs for GitHub Pages and later the final domain.
-5. Add only the public project URL and **publishable** key to `config.js`.
-6. Never put a `service_role`, secret key or privileged credential in this public repository.
+Never place a `service_role`, secret key or privileged credential in this public repository.
+
+## Domain architecture
+
+`www.marocvows.com` should be the canonical public domain once deployment is isolated.
+
+Do **not** attach MarocVows directly to the existing `yopisimoni.github.io` user-site root because that repository also serves the owner's developer portfolio and other project sites. The clean production setup is a dedicated public repository/site for MarocVows, then connect `www.marocvows.com` to that site and redirect the apex `marocvows.com` to `www.marocvows.com`.
+
+See `DOMAIN_LAUNCH.md` for the safe migration plan.
 
 ## Expansion strategy
 
-Do **not** create empty city SEO pages. Expand only when a city has enough genuine local listings to make the page useful.
+Do **not** publish empty city pages purely for SEO. Expand only after a city has enough genuine local listings to make its page useful.
 
 ### Live pilot
 
@@ -77,19 +93,6 @@ Do **not** create empty city SEO pages. Expand only when a city has enough genui
 - Meknès
 
 ### National roadmap
-
-- Casablanca
-- Rabat
-- Marrakech
-- Tanger
-- Agadir
-- Oujda
-- Tétouan
-- Kénitra
-- El Jadida
-- additional cities only after research coverage is strong enough
-
-Recommended rollout after the pilot proves useful:
 
 1. Casablanca
 2. Rabat
@@ -100,27 +103,27 @@ Recommended rollout after the pilot proves useful:
 7. Tétouan
 8. Kénitra
 9. El Jadida
+10. additional cities once research coverage is strong enough
 
 ## SEO architecture
 
-When profiles are ready, create permanent indexable routes such as:
+After the branded domain is live, move toward clean permanent routes such as:
 
-- `/morocco-event-caterers/khenifra/`
-- `/morocco-event-caterers/fes/`
-- `/morocco-event-caterers/meknes/`
-- `/morocco-event-caterers/fes/doreve-events/`
-
-After the final domain is purchased, migrate these to clean branded routes while preserving redirects and canonicals.
+- `https://www.marocvows.com/khenifra/`
+- `https://www.marocvows.com/fes/`
+- `https://www.marocvows.com/meknes/`
+- `https://www.marocvows.com/fes/doreve-events/`
 
 Each provider profile should eventually include its own photos, city/service area, services, languages, contact methods, approved community rating, approved reviews, report action and last-verified date.
 
-## Market reality
+## Differentiation
 
-There are already Morocco wedding directories and marketplaces. This project therefore should not compete as a generic list alone. Its differentiation should be:
+MarocVows should compete on:
 
 - diaspora-first multilingual experience
-- highly usable city pages
+- excellent city-level usefulness
 - transparent on-site review ranking
+- fast, comfortable feedback UX
 - moderated user photos and reports
 - strong local coverage beyond only the largest destination cities
 - clean provider profiles and direct contact
@@ -128,6 +131,6 @@ There are already Morocco wedding directories and marketplaces. This project the
 
 ## Listing policy
 
-Business contact information was researched from current public listings in September 2026. Details can change; users should confirm directly before booking.
+Business contact information was researched from public sources in September 2026. Details can change; users should confirm directly before booking.
 
-Main initial research sources included official provider websites, public local business listings, Telecontact, AfricaBizInfo and MesCadeaux directories.
+Initial research sources included official provider websites, public local business listings, Telecontact, AfricaBizInfo and MesCadeaux directories.
