@@ -24,8 +24,8 @@ button,a{-webkit-tap-highlight-color:transparent}
 img{max-width:100%}
 ::selection{background:#d9c29a;color:#171310}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-
-/* Premium navigation */
+.lang-copy{display:none}
+html[lang="en"] .lang-copy[data-lang="en"],html[lang="ar"] .lang-copy[data-lang="ar"],html[lang="fr"] .lang-copy[data-lang="fr"],html[lang="es"] .lang-copy[data-lang="es"]{display:inline}
 .site-header{position:sticky;top:0;z-index:40;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:14px clamp(20px,5vw,76px);background:rgba(246,241,232,.88);backdrop-filter:blur(18px) saturate(1.1);border-bottom:1px solid rgba(73,55,35,.1)}
 .brand{display:flex;align-items:center;gap:12px;font-weight:850;text-decoration:none;letter-spacing:-.025em}
 .brand-mark{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;background:linear-gradient(145deg,var(--forest),#285c4d);color:#f7ead3;font:600 1.12rem/1 Georgia,serif;box-shadow:inset 0 0 0 1px rgba(255,255,255,.16),0 7px 20px rgba(23,61,50,.18)}
@@ -34,8 +34,6 @@ img{max-width:100%}
 .language-select{cursor:pointer;outline:none}
 .outline-btn{text-decoration:none;font-weight:800;transition:.2s ease}
 .outline-btn:hover{background:var(--forest);border-color:var(--forest);color:white;transform:translateY(-1px)}
-
-/* Editorial hero with licensed free-use inspiration image */
 .hero{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(290px,.58fr);gap:38px;align-items:end;max-width:none;min-height:720px;margin:0;padding:clamp(92px,11vw,155px) clamp(20px,6vw,92px) clamp(72px,8vw,112px);overflow:hidden;background:#18231e;color:white}
 .hero::before{content:"";position:absolute;inset:0;z-index:-3;background-image:url('https://images.unsplash.com/photo-1745573673043-43a4f3b91466?auto=format&fit=crop&fm=jpg&q=86&w=2400');background-size:cover;background-position:center 46%;transform:scale(1.015)}
 .hero::after{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(10,18,15,.88) 0%,rgba(10,18,15,.68) 43%,rgba(10,18,15,.34) 72%,rgba(10,18,15,.42) 100%),linear-gradient(0deg,rgba(10,18,15,.52),transparent 55%)}
@@ -55,8 +53,6 @@ img{max-width:100%}
 .stat strong{font:500 clamp(2rem,4vw,3.65rem)/1 Georgia,serif;color:#f7ead3}
 .stat span{color:rgba(255,255,255,.72)}
 .hero-panel p{color:rgba(255,255,255,.66);margin:24px 0 0}
-
-/* Search bar becomes the conversion control */
 .search-band{position:relative;z-index:5;max-width:1180px;margin:-42px auto 18px;padding:18px;display:grid;grid-template-columns:1fr 250px;gap:14px;background:rgba(255,253,249,.96);border:1px solid rgba(73,55,35,.13);border-radius:24px;box-shadow:0 28px 74px rgba(39,27,15,.16);backdrop-filter:blur(12px)}
 .search-field,.filter-field{display:flex;flex-direction:column;gap:7px}
 .search-band label{font-size:.77rem;text-transform:uppercase;letter-spacing:.08em;font-weight:900;color:#665b50}
@@ -67,8 +63,17 @@ img{max-width:100%}
 .directory-meta p{margin:0}
 #resultCount{font-weight:850;color:var(--forest)}
 .freshness{max-width:660px;text-align:end}
-
-/* City sections: photos are decorative inspiration, never vendor work */
+.wedding-network{max-width:1180px;margin:18px auto 72px;padding:42px;display:grid;grid-template-columns:.86fr 1.14fr;gap:46px;align-items:center;background:var(--forest);color:white;border-radius:32px;box-shadow:var(--shadow)}
+.network-copy h2,.diaspora-copy h2{font:500 clamp(2.4rem,4.5vw,4.8rem)/.98 Georgia,serif;letter-spacing:-.045em;margin:0;text-wrap:balance}
+.network-copy>p:last-child{color:rgba(255,255,255,.68);font-size:1rem;margin:20px 0 0;max-width:620px}
+.wedding-network .eyebrow{color:#e6c88f}
+.category-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.category-tile{min-height:126px;padding:17px;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid rgba(255,255,255,.15);border-radius:18px;background:rgba(255,255,255,.055)}
+.category-tile span{font-size:1.5rem;margin-bottom:auto}
+.category-tile strong{font-size:.97rem}
+.category-tile small{color:rgba(255,255,255,.56);margin-top:2px}
+.category-tile.is-live{background:#f3e3c4;color:#20170f;border-color:#f3e3c4}
+.category-tile.is-live small{color:#6d542d;font-weight:800}
 .city-group{position:relative;max-width:1320px;margin:auto;padding:54px clamp(20px,5vw,72px) 62px}
 .city-group+.city-group{border-top:1px solid rgba(73,55,35,.11)}
 .section-heading{position:relative;min-height:174px;display:flex;justify-content:space-between;align-items:end;margin-bottom:24px;padding:28px 30px;border-radius:26px;overflow:hidden;background:#1c352d;color:white;box-shadow:var(--shadow-soft)}
@@ -80,8 +85,6 @@ img{max-width:100%}
 [data-city-group="meknes"] .section-heading::before{background-image:url('https://images.unsplash.com/photo-1745573673043-43a4f3b91466?auto=format&fit=crop&fm=jpg&q=82&w=1800')}
 .section-heading .eyebrow{color:#e8c98f;margin-bottom:8px}
 .section-heading h2,.how h2,.review-principles h2{font:500 clamp(2.25rem,4.4vw,4.55rem)/.98 Georgia,serif;letter-spacing:-.042em;margin:0}
-
-/* Premium listing cards */
 .card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .vendor-card{position:relative;display:flex;flex-direction:column;min-height:292px;background:linear-gradient(180deg,#fffdfa 0%,#fffaf1 100%);border:1px solid rgba(73,55,35,.13);border-radius:22px;padding:21px;overflow:hidden;box-shadow:0 5px 0 rgba(73,55,35,.02);transition:transform .24s ease,border-color .24s ease,box-shadow .24s ease}
 .vendor-card::after{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,var(--gold),#e0c28f,transparent);opacity:.55}
@@ -101,8 +104,12 @@ img{max-width:100%}
 .card-actions a:hover{border-color:var(--gold);background:#fffaf0}
 .card-actions button{background:var(--forest);color:white;border-color:var(--forest)}
 .card-actions button:hover{background:var(--forest-2);transform:translateY(-1px)}
-
-/* How it works / trust */
+.diaspora-callout{max-width:1180px;margin:72px auto 86px;display:grid;grid-template-columns:1fr 1fr;min-height:540px;border-radius:34px;overflow:hidden;background:#1b1815;color:white;box-shadow:var(--shadow)}
+.diaspora-photo{min-height:440px;background-image:linear-gradient(180deg,transparent 70%,rgba(16,18,15,.2)),url('https://images.pexels.com/photos/30726848/pexels-photo-30726848/free-photo-of-traditional-moroccan-tea-setting-in-fes.jpeg?auto=compress&cs=tinysrgb&w=1800');background-size:cover;background-position:center}
+.diaspora-copy{display:flex;flex-direction:column;justify-content:center;padding:clamp(34px,5vw,68px)}
+.diaspora-copy .eyebrow{color:#e6c88f}
+.diaspora-copy p:not(.eyebrow){color:rgba(255,255,255,.68);margin:22px 0 28px;max-width:620px}
+.diaspora-copy .primary-btn{align-self:flex-start}
 .how{max-width:1180px;margin:86px auto;padding:58px clamp(24px,5vw,64px);border-radius:34px;background:linear-gradient(135deg,#e8dfcf,#f2eadf);display:grid;grid-template-columns:.82fr 1.18fr;gap:64px;box-shadow:inset 0 0 0 1px rgba(73,55,35,.08)}
 .how .eyebrow{color:var(--gold-deep)}
 .steps{list-style:none;padding:0;margin:0}
@@ -114,12 +121,8 @@ img{max-width:100%}
 .review-principles{max-width:940px;margin:86px auto;padding:0 24px;text-align:center}
 .review-principles:before{content:"✦";display:block;color:var(--gold);font-size:1.25rem;margin-bottom:14px}
 .review-principles p{color:var(--muted);font-size:1.06rem;max-width:760px;margin:18px auto}
-
-/* Footer */
 footer{max-width:1320px;margin:0 auto;padding:44px clamp(20px,5vw,72px);border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:24px;color:var(--muted);font-size:.88rem}
 footer::after{content:"Wedding inspiration imagery from free-use Unsplash / Pexels photography.";display:block;max-width:360px;text-align:end;color:#948a7e;font-size:.74rem}
-
-/* Reviews */
 dialog{width:min(760px,calc(100% - 28px));max-height:88vh;overflow:auto;border:1px solid rgba(73,55,35,.16);border-radius:26px;background:var(--card);color:var(--ink);padding:26px;box-shadow:0 38px 110px rgba(0,0,0,.34)}
 dialog::backdrop{background:rgba(9,18,14,.62);backdrop-filter:blur(5px)}
 .dialog-head{display:flex;justify-content:space-between;gap:15px;align-items:start}
@@ -138,18 +141,16 @@ dialog::backdrop{background:rgba(9,18,14,.62);backdrop-filter:blur(5px)}
 .honeypot{position:absolute!important;left:-9999px!important}
 .empty-state{padding:18px;border:1px dashed var(--line);border-radius:13px;color:var(--muted);text-align:center;background:#fff}
 .no-results{max-width:1180px;margin:10px auto 60px;padding:30px;text-align:center;border:1px dashed var(--line);border-radius:18px;color:var(--muted)}
-
-/* RTL */
 html[dir="rtl"] body{font-family:Tahoma,Arial,sans-serif}
-html[dir="rtl"] .hero h1,html[dir="rtl"] .section-heading h2,html[dir="rtl"] .how h2,html[dir="rtl"] .review-principles h2,html[dir="rtl"] .vendor-card h3,html[dir="rtl"] .dialog-head h2{font-family:Tahoma,Arial,sans-serif;letter-spacing:0}
+html[dir="rtl"] .hero h1,html[dir="rtl"] .section-heading h2,html[dir="rtl"] .how h2,html[dir="rtl"] .review-principles h2,html[dir="rtl"] .vendor-card h3,html[dir="rtl"] .dialog-head h2,html[dir="rtl"] .network-copy h2,html[dir="rtl"] .diaspora-copy h2{font-family:Tahoma,Arial,sans-serif;letter-spacing:0}
 html[dir="rtl"] .freshness,html[dir="rtl"] footer::after{text-align:start}
-
-/* Accessibility */
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 @media(max-width:980px){
   .hero{grid-template-columns:1fr;min-height:760px;align-content:end}
   .hero-panel{max-width:560px}
+  .wedding-network{grid-template-columns:1fr;margin-inline:20px}
   .card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .diaspora-callout{grid-template-columns:1fr;margin-inline:20px}
   .how{grid-template-columns:1fr;gap:42px}
   .search-band{grid-template-columns:1fr;margin-inline:20px}
   .directory-meta{padding-inline:24px;flex-direction:column}
@@ -172,11 +173,18 @@ html[dir="rtl"] .freshness,html[dir="rtl"] footer::after{text-align:start}
   .trust-row{margin-top:28px}
   .search-band{margin:-34px 14px 10px;border-radius:20px;padding:14px}
   .directory-meta{padding:10px 20px 32px}
+  .wedding-network{margin:8px 14px 46px;padding:28px 20px;border-radius:24px}
+  .network-copy h2,.diaspora-copy h2{font-size:clamp(2.3rem,12vw,3.6rem)}
+  .category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .category-tile{min-height:112px}
   .city-group{padding:34px 14px 44px}
   .section-heading{min-height:154px;padding:22px;border-radius:22px}
   .section-heading h2{font-size:clamp(2rem,11vw,3.2rem)}
   .card-grid{grid-template-columns:1fr;gap:13px}
   .vendor-card{min-height:270px;border-radius:19px}
+  .diaspora-callout{margin:46px 14px 58px;border-radius:24px}
+  .diaspora-photo{min-height:320px}
+  .diaspora-copy{padding:32px 22px 38px}
   .how{margin:54px 14px;padding:36px 22px;border-radius:24px}
   .form-row{grid-template-columns:1fr}
   footer{flex-direction:column;padding-inline:20px}
