@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://yopisimoni.github.io/morocco-event-caterers/</loc>
-    <lastmod>2026-09-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+  <url><loc>https://yopisimoni.github.io/morocco-event-caterers/</loc><lastmod>2026-09-06</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://yopisimoni.github.io/morocco-event-caterers/about.html</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://yopisimoni.github.io/morocco-event-caterers/privacy.html</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://yopisimoni.github.io/morocco-event-caterers/terms.html</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://yopisimoni.github.io/morocco-event-caterers/community-guidelines.html</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://yopisimoni.github.io/morocco-event-caterers/contact.html</loc><lastmod>2026-09-06</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
