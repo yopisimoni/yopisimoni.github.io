@@ -1,7 +1,9 @@
-# Morocco Wedding Guide — Production QA Checklist
+# MarocVows — Production QA Checklist
 
 ## Completed in the public pilot
 
+- [x] Brand domain acquired: `marocvows.com`
+- [x] MarocVows product branding applied to the pilot experience
 - [x] English, Arabic (RTL), French and Spanish homepage support
 - [x] Multilingual About page
 - [x] Multilingual Privacy Policy
@@ -13,16 +15,19 @@
 - [x] No fake ratings; providers start as `New`
 - [x] Ranking design uses approved on-site reviews rather than copied third-party scores
 - [x] Guest browsing remains available without account
+- [x] Fast review UX prepared: overall stars + quick experience highlights + optional short note
 - [x] Account gate prepared for reviews, ratings, photos and reports
 - [x] Decorative inspiration photography is not labelled as vendor portfolio work
+- [x] MarocVows favicon created
 - [x] No service-role or privileged secret is present in frontend configuration
+- [x] Safe custom-domain migration plan documented in `DOMAIN_LAUNCH.md`
 
 ## Mandatory before enabling production accounts / personal-data collection
 
 - [ ] Publish the final legal identity of the data controller/operator
-- [ ] Publish a monitored privacy/contact email address
+- [ ] Create and publish a monitored MarocVows privacy/contact email address
 - [ ] Complete the appropriate CNDP notification for personal-data processing under Morocco Law 09-08
-- [ ] Complete the required CNDP cross-border transfer procedure before personal data is transferred outside Morocco
+- [ ] Complete the required CNDP cross-border transfer procedure before personal data is transferred outside Morocco where applicable
 - [ ] Record the CNDP declaration/authorisation references in the Privacy Policy where applicable
 - [ ] Review processor contracts / data-processing terms for Supabase and any other personal-data processor
 - [x] Production data-hosting region confirmed: Supabase `eu-west-3` (Paris, France)
@@ -31,11 +36,10 @@
 - [ ] Define and test a process for access, correction, objection and deletion/erasure requests where applicable
 - [ ] Define moderation retention periods and make backend retention match the published Privacy Policy
 
-## Backend / security before launch
+## Backend / security before community launch
 
 - [x] Dedicated Supabase project `morocco-wedding-guide` created
 - [x] Community reviews / photos / reports schema applied as migrations
-- [x] Frontend connected with Supabase project URL + publishable key only
 - [x] Reviews table has RLS enabled
 - [x] Vendor photo metadata table has RLS enabled
 - [x] Reports table has RLS enabled
@@ -48,9 +52,10 @@
 - [x] Supabase security advisor: no security lints
 - [x] Foreign-key performance indexes added
 - [x] No service-role or secret keys in public source
-- [ ] Add `https://yopisimoni.github.io/morocco-event-caterers/` to Supabase Auth Site URL / Additional Redirect URLs
+- [x] Personal-data/community features intentionally gated in the public pilot
+- [ ] Add `https://yopisimoni.github.io/morocco-event-caterers/` to Supabase Auth Site URL / Additional Redirect URLs for pilot testing
+- [ ] Add `https://www.marocvows.com/` to Supabase Auth Site URL / Additional Redirect URLs at domain cutover
 - [ ] Magic-link sign in tested on desktop and mobile
-- [ ] Final domain added to Supabase Auth redirect URLs after purchase
 - [ ] Review moderation tested end-to-end: pending → approved → visible
 - [ ] Star average and review count tested using approved reviews only
 - [ ] Sort by top rated / most reviewed / A–Z tested with real sample data
@@ -58,6 +63,20 @@
 - [ ] Photo moderation tested before public display
 - [ ] Report submission tested from a real authenticated account
 - [ ] Rate limiting / abuse controls tested for auth, reviews, reports and uploads
+
+## Branded-domain infrastructure
+
+- [ ] Create dedicated public GitHub repository `marocvows`
+- [ ] Copy current site files into that repository root
+- [ ] Enable GitHub Pages on the dedicated repository
+- [ ] Verify `marocvows.com` ownership in GitHub
+- [ ] Configure `www.marocvows.com` as the Pages custom domain
+- [ ] Configure DNS for `www` and apex/root
+- [ ] Confirm no conflicting or wildcard DNS records
+- [ ] Confirm HTTPS certificate is active
+- [ ] Confirm `marocvows.com` redirects to `www.marocvows.com`
+- [ ] Update canonical URLs to `https://www.marocvows.com/`
+- [ ] Update sitemap / robots / Open Graph / structured-data URLs to final domain
 
 ## Content / UX before branded-domain launch
 
@@ -71,20 +90,24 @@
 - [ ] Prefer self-hosted decorative photography or document third-party media delivery in privacy disclosures
 - [ ] Accessibility pass: keyboard navigation, focus states, labels, contrast and modal behaviour
 - [ ] Performance pass: compress/self-host images and check Core Web Vitals
-- [ ] Sitemap, robots, canonical, Open Graph URLs and structured data updated to final domain
-- [ ] 301 redirects prepared if the GitHub Pages paths change after domain migration
-- [ ] Custom domain uses HTTPS successfully
+- [ ] 301 redirects prepared if pilot URLs change after domain migration
+
+## Public go/no-go rule
+
+**GO now:** public browsing, search, city filtering, direct provider contact, legal pages and the three-city pilot.
+
+**KEEP GATED:** account creation, ratings, reviews, photo uploads and reports until the privacy/operator/CNDP + Auth redirect requirements above are complete and tested.
 
 ## Pilot acceptance criteria
 
-Keep Khénifra, Fès and Meknès as the public pilot until:
+Keep Khénifra, Fès and Meknès as the focused public pilot until:
 
 1. At least 80% of listings have a working contact method.
 2. Each city has enough useful listings to avoid thin pages.
-3. Real users can create accounts and submit moderated feedback.
+3. Real users can create accounts and submit moderated feedback safely.
 4. We have a repeatable way to verify listings and handle corrections.
 5. Search, ranking and review moderation have been tested with real sample data.
-6. Privacy/CNDP launch gates above are complete before personal-data features are switched on.
+6. Privacy/CNDP launch gates are complete before personal-data features are switched on.
 
 ## National expansion order
 
