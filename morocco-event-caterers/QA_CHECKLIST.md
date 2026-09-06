@@ -22,10 +22,10 @@
 - [ ] Publish the final legal identity of the data controller/operator
 - [ ] Publish a monitored privacy/contact email address
 - [ ] Complete the appropriate CNDP notification for personal-data processing under Morocco Law 09-08
-- [ ] If personal data is hosted/stored outside Morocco, complete the required CNDP cross-border transfer procedure before transfer
+- [ ] Complete the required CNDP cross-border transfer procedure before personal data is transferred outside Morocco
 - [ ] Record the CNDP declaration/authorisation references in the Privacy Policy where applicable
 - [ ] Review processor contracts / data-processing terms for Supabase and any other personal-data processor
-- [ ] Confirm production data-hosting region and document it
+- [x] Production data-hosting region confirmed: Supabase `eu-west-3` (Paris, France)
 - [ ] Do not add non-essential personal-data cookies before required information/consent and CNDP cookie formalities are ready
 - [ ] If analytics is added, implement consent before non-essential tracking and document provider/purpose/retention
 - [ ] Define and test a process for access, correction, objection and deletion/erasure requests where applicable
@@ -33,21 +33,30 @@
 
 ## Backend / security before launch
 
-- [ ] Create a dedicated Supabase project for Morocco Wedding Guide
-- [ ] Apply and review `supabase/reviews.sql`
+- [x] Dedicated Supabase project `morocco-wedding-guide` created
+- [x] Community reviews / photos / reports schema applied as migrations
+- [x] Frontend connected with Supabase project URL + publishable key only
+- [x] Reviews table has RLS enabled
+- [x] Vendor photo metadata table has RLS enabled
+- [x] Reports table has RLS enabled
+- [x] Private `vendor-photos` storage bucket created
+- [x] Storage upload/read/delete RLS policies verified
+- [x] One review per account/provider enforced at database level
+- [x] Review submission policy requires authenticated owner and `pending` status
+- [x] Photo metadata submission policy requires authenticated owner and `pending` status
+- [x] Reports are authenticated inserts and are not publicly readable
+- [x] Supabase security advisor: no security lints
+- [x] Foreign-key performance indexes added
+- [x] No service-role or secret keys in public source
+- [ ] Add `https://yopisimoni.github.io/morocco-event-caterers/` to Supabase Auth Site URL / Additional Redirect URLs
 - [ ] Magic-link sign in tested on desktop and mobile
-- [ ] GitHub Pages URL added to Supabase Auth redirect URLs
 - [ ] Final domain added to Supabase Auth redirect URLs after purchase
-- [ ] Review submission requires authenticated user
-- [ ] One review per account/provider enforced
-- [ ] Review moderation tested: pending → approved → visible
-- [ ] Star average and review count update only from approved reviews
-- [ ] Sort by top rated / most reviewed / A–Z tested
-- [ ] Photo upload accepts only JPEG/PNG/WebP and max 8 MB
-- [ ] Photo moderation tested before any public display
-- [ ] Report submission tested and not publicly readable
-- [ ] Supabase RLS/security advisor has no unresolved critical findings
-- [ ] No service-role or secret keys in public source
+- [ ] Review moderation tested end-to-end: pending → approved → visible
+- [ ] Star average and review count tested using approved reviews only
+- [ ] Sort by top rated / most reviewed / A–Z tested with real sample data
+- [ ] Photo upload tested end-to-end: JPEG/PNG/WebP, max 8 MB, pending moderation
+- [ ] Photo moderation tested before public display
+- [ ] Report submission tested from a real authenticated account
 - [ ] Rate limiting / abuse controls tested for auth, reviews, reports and uploads
 
 ## Content / UX before branded-domain launch
