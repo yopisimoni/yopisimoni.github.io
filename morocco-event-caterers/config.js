@@ -1,9 +1,12 @@
 // Public frontend configuration only.
-// This project uses only a Supabase publishable key in browser code.
+// The dedicated Supabase project is provisioned and secured, but personal-data
+// features remain intentionally gated until CNDP/operator-contact requirements
+// and Supabase Auth redirect URLs are completed.
 // NEVER put a service_role key or secret key here.
 window.CATERER_APP_CONFIG = {
-  supabaseUrl: "https://zhoapmabrzhdqjphbqgy.supabase.co",
-  publishableKey: "sb_publishable_-oNdtRaYWhrmzsRtUY7YDQ_3xA3W7Si"
+  supabaseUrl: "",
+  publishableKey: "",
+  communityFeaturesEnabled: false
 };
 
 (()=>{
