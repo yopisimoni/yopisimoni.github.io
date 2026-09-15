@@ -145,7 +145,7 @@
               <li>Small mobile responsiveness fix</li>
               <li>Simple form or JavaScript issue</li>
             </ul>
-            <a class="text-link price-cta" href="mailto:simohamed.amara@gmail.com?subject=Quick%20website%20fix&body=Website%3A%20%0AProblem%3A%20%0AWhat%20should%20happen%3A%20">Send the problem <span>↗</span></a>
+            <a class="text-link price-cta" href="https://mail.google.com/mail/?view=cm&fs=1&to=simohamed.amara@gmail.com&su=Quick%20website%20fix&body=Website%3A%0AProblem%3A%0AWhat%20should%20happen%3A">Send the problem <span>↗</span></a>
           </article>
 
           <article class="card pricing-card featured-price">
@@ -157,7 +157,7 @@
               <li>Landing-page cleanup</li>
               <li>Mobile + form + tracking fixes</li>
             </ul>
-            <a class="text-link price-cta" href="mailto:simohamed.amara@gmail.com?subject=Website%20repair%20request&body=Website%3A%20%0AProblems%3A%20%0AWhat%20you%20want%20improved%3A%20">Request a quote <span>↗</span></a>
+            <a class="text-link price-cta" href="https://mail.google.com/mail/?view=cm&fs=1&to=simohamed.amara@gmail.com&su=Website%20repair%20request&body=Website%3A%0AProblems%3A%0AWhat%20you%20want%20improved%3A">Request a quote <span>↗</span></a>
           </article>
 
           <article class="card pricing-card">
@@ -169,7 +169,7 @@
               <li>API or analytics integration</li>
               <li>Small automation workflow</li>
             </ul>
-            <a class="text-link price-cta" href="mailto:simohamed.amara@gmail.com?subject=Small%20web%20feature%20request&body=Website%20or%20app%3A%20%0AFeature%3A%20%0AExpected%20result%3A%20">Describe the feature <span>↗</span></a>
+            <a class="text-link price-cta" href="https://mail.google.com/mail/?view=cm&fs=1&to=simohamed.amara@gmail.com&su=Small%20web%20feature%20request&body=Website%20or%20app%3A%0AFeature%3A%0AExpected%20result%3A">Describe the feature <span>↗</span></a>
           </article>
         </div>
 
@@ -333,10 +333,11 @@
           <h2>Show me what’s broken.</h2>
           <p>Send the website URL, what is going wrong, and what you expected to happen. For small jobs, I’ll keep the scope focused and quote the fix before work begins.</p>
           <div class="actions centered">
-            <a class="button primary" href="mailto:simohamed.amara@gmail.com?subject=Website%20fix%20request&body=Website%3A%20%0AProblem%3A%20%0AExpected%20result%3A%20">Send a website problem <span>↗</span></a>
+            <a class="button primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=simohamed.amara@gmail.com&su=Website%20fix%20request&body=Website%3A%0AProblem%3A%0AExpected%20result%3A" target="_blank" rel="noopener">Send with Gmail <span>↗</span></a>
+            <button class="button secondary copy-email" type="button" data-email="simohamed.amara@gmail.com">Copy email <span>⧉</span></button>
             <a class="button secondary" href="https://github.com/yopisimoni" target="_blank" rel="noopener">GitHub <span>↗</span></a>
           </div>
-          <a class="email-link" href="mailto:simohamed.amara@gmail.com">simohamed.amara@gmail.com</a>
+          <button class="email-link email-copy-link" type="button" data-email="simohamed.amara@gmail.com">simohamed.amara@gmail.com · click to copy</button>
         </div>
       </section>
     </main>
@@ -345,6 +346,34 @@
       <span>© 2026 Simohamed Amara</span>
       <span>Website Fixes · Web Development · WordPress · Next.js · Automation</span>
     </footer>
+    <div id="copy-toast" class="copy-toast" role="status" aria-live="polite">Email copied</div>
   </div>
+  <script>
+    (() => {
+      const toast = document.getElementById('copy-toast');
+      let timer;
+      document.querySelectorAll('[data-email]').forEach((button) => {
+        button.addEventListener('click', async () => {
+          const email = button.getAttribute('data-email');
+          try {
+            await navigator.clipboard.writeText(email);
+            const original = button.innerHTML;
+            if (button.classList.contains('copy-email')) {
+              button.innerHTML = 'Copied <span>✓</span>';
+              setTimeout(() => { button.innerHTML = original; }, 1800);
+            }
+            if (toast) {
+              toast.textContent = 'Email copied: ' + email;
+              toast.classList.add('show');
+              clearTimeout(timer);
+              timer = setTimeout(() => toast.classList.remove('show'), 2200);
+            }
+          } catch (err) {
+            window.prompt('Copy this email address:', email);
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
