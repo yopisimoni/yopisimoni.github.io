@@ -477,3 +477,135 @@ footer{
   .hero-visual-card img{animation:none!important}
   .button,.service-card,.project-card,.card-project-image img,.premium-project-image img{transition:none!important}
 }
+
+
+/* Premium palette — obsidian / champagne / cool teal */
+:root{
+  --bg:#06080b;
+  --panel:#0d1116;
+  --panel-2:#11161c;
+  --line:rgba(255,255,255,.075);
+  --line-strong:rgba(229,210,170,.16);
+  --text:#f5f3ef;
+  --muted:#9c9da1;
+  --soft:#6f747b;
+  --accent:#d8b979;
+  --accent-bright:#efd9a4;
+  --accent-2:#73d3cd;
+  --accent-soft:rgba(216,185,121,.12);
+}
+body{
+  background:
+    radial-gradient(circle at 12% -8%,rgba(216,185,121,.09),transparent 30%),
+    radial-gradient(circle at 90% 12%,rgba(115,211,205,.065),transparent 25%),
+    linear-gradient(180deg,#06080b 0%,#090b0f 52%,#07090c 100%);
+  color:var(--text);
+}
+::selection{background:var(--accent);color:#151008}
+.eyebrow,.text-link,.pricing-note>span{color:var(--accent)}
+.brand-mark>span{color:var(--accent)}
+.nav:before{
+  background:linear-gradient(110deg,rgba(216,185,121,.07),transparent 24%,transparent 70%,rgba(115,211,205,.045));
+}
+.nav-cta{
+  background:linear-gradient(180deg,#f3dfb3,#d7b574);
+  color:#171108!important;
+  box-shadow:0 10px 26px rgba(73,52,17,.22),inset 0 1px 0 rgba(255,255,255,.6);
+}
+.nav-cta span{color:#171108}
+.availability{
+  border-color:rgba(216,185,121,.18);
+  background:rgba(18,15,10,.55);
+  color:#c3b79f;
+}
+.availability i,.project-state i{
+  background:var(--accent-2);
+  box-shadow:0 0 14px rgba(115,211,205,.65);
+}
+.project-state{color:var(--accent-2)}
+.hero:before{
+  background:radial-gradient(circle,rgba(216,185,121,.085),transparent 66%);
+}
+.hero h1 em{
+  background:linear-gradient(92deg,#f4ead7 0%,#d7c39f 44%,#93846c 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.primary{
+  background:linear-gradient(180deg,#f6e5be,#d8b979);
+  color:#171108;
+  box-shadow:0 14px 36px rgba(68,49,16,.24),0 0 0 1px rgba(255,255,255,.28) inset;
+}
+.secondary{
+  border-color:rgba(216,185,121,.14);
+  background:rgba(15,16,18,.78);
+}
+.hero-meta span,.about-tags span{
+  border-color:rgba(216,185,121,.09);
+  background:rgba(15,14,12,.36);
+}
+.hero-signature>span{color:var(--accent)}
+.hero-visual-card{
+  border-color:rgba(216,185,121,.18);
+  box-shadow:0 52px 145px rgba(0,0,0,.52),0 0 0 1px rgba(216,185,121,.035) inset,0 0 90px rgba(115,211,205,.05);
+}
+.hero-visual-card:after{
+  background:radial-gradient(circle,rgba(115,211,205,.16),transparent 68%);
+}
+.visual-badge-top i{
+  background:var(--accent-2);
+  box-shadow:0 0 16px rgba(115,211,205,.75);
+}
+.visual-badge-bottom b{
+  background:rgba(216,185,121,.12);
+  border-color:rgba(216,185,121,.2);
+  color:var(--accent-bright);
+}
+.trust-strip:before,.section-heading:after,.featured-price:after,.contact:before{
+  background:linear-gradient(90deg,var(--accent),transparent);
+}
+.service-card:before{
+  background:radial-gradient(circle at 0 0,rgba(216,185,121,.075),transparent 35%);
+}
+.service-icon{
+  color:var(--accent-bright);
+  background:linear-gradient(145deg,rgba(216,185,121,.10),rgba(255,255,255,.015));
+  border-color:rgba(216,185,121,.13);
+}
+.micro-list li:before{background:var(--accent)}
+.featured-price{
+  border-color:rgba(216,185,121,.29);
+  background:
+    radial-gradient(circle at 90% 0,rgba(216,185,121,.11),transparent 33%),
+    linear-gradient(155deg,rgba(25,22,17,.98),rgba(11,14,17,.95));
+  box-shadow:0 34px 90px rgba(0,0,0,.26),0 0 0 1px rgba(216,185,121,.045) inset;
+}
+.featured-price:before{
+  color:var(--accent-bright);
+  border-color:rgba(216,185,121,.25);
+  background:rgba(31,24,12,.75);
+}
+.project-card:hover,.service-card:hover{
+  border-color:rgba(216,185,121,.18);
+}
+.tag{
+  border-color:rgba(216,185,121,.11);
+  background:rgba(216,185,121,.025);
+}
+.more-work{
+  background:
+    radial-gradient(circle at 10% 0,rgba(216,185,121,.055),transparent 28%),
+    rgba(10,14,19,.5);
+}
+.contact{
+  background:
+    radial-gradient(circle at 50% 0,rgba(216,185,121,.10),transparent 35%),
+    radial-gradient(circle at 90% 80%,rgba(115,211,205,.05),transparent 30%),
+    linear-gradient(160deg,rgba(16,18,21,.98),rgba(8,11,14,.97));
+}
+.orb-one{background:var(--accent)}
+.orb-two{background:var(--accent-2)}
+a:focus-visible,.button:focus-visible{
+  outline:2px solid var(--accent-bright);
+  outline-offset:4px;
+  border-radius:10px;
+}
