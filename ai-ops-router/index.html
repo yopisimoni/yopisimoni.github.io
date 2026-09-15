@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="AI Ops Router — public automation proof by Simohamed Amara. Request triage, priority routing, Supabase persistence pattern, and n8n handoff.">
+  <meta name="theme-color" content="#07090d">
+  <title>AI Ops Router — Simohamed Amara</title>
+  <style>
+    :root{--bg:#07090d;--panel:#0d1218;--line:rgba(255,255,255,.09);--text:#f6f3ed;--muted:#8f99a4;--gold:#d9bb7b;--gold2:#f0dca8;--teal:#70d4cf}
+    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:radial-gradient(circle at 10% -10%,rgba(217,187,123,.11),transparent 32%),radial-gradient(circle at 92% 12%,rgba(112,212,207,.08),transparent 28%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-decoration:none} button,input,textarea{font:inherit}
+    .wrap{width:min(calc(100% - 32px),1160px);margin:auto}
+    header{height:72px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .brand{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:800}.mark{width:34px;height:34px;display:grid;place-items:center;border:1px solid rgba(217,187,123,.2);border-radius:10px;background:rgba(217,187,123,.05)}.mark span{color:var(--teal)}
+    .toplink{font-size:11px;color:#a7b0b8;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.02)}
+    .hero{padding:82px 0 54px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:7px 10px;border:1px solid rgba(112,212,207,.2);border-radius:999px;background:rgba(112,212,207,.05);font-size:10px;font-weight:800;color:#bdece9}.dot{width:6px;height:6px;border-radius:50%;background:var(--teal);box-shadow:0 0 12px rgba(112,212,207,.8)}
+    .eyebrow{margin:22px 0 10px;color:var(--gold);font-size:10px;font-weight:900;letter-spacing:.16em;text-transform:uppercase}
+    h1{margin:0;font-size:clamp(50px,7vw,80px);line-height:.96;letter-spacing:-.06em} h1 em{font-style:normal;background:linear-gradient(90deg,#fff1d2,#b99c63);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lede{max-width:720px;margin:24px 0 0;color:#9da6ae;font-size:16px;line-height:1.8}
+    .flow{display:grid;gap:12px}.flowcard{padding:18px;border:1px solid var(--line);border-radius:18px;background:linear-gradient(145deg,rgba(17,23,30,.9),rgba(9,13,18,.88));box-shadow:inset 0 1px 0 rgba(255,255,255,.03)}.flowcard small{color:var(--gold);font-weight:900;letter-spacing:.12em}.flowcard h3{margin:10px 0 5px;font-size:15px}.flowcard p{margin:0;color:#727d87;font-size:11px;line-height:1.6}
+    .lab{padding:24px 0 74px;display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}.card{border:1px solid var(--line);border-radius:24px;background:rgba(12,17,23,.88);padding:25px;box-shadow:0 24px 80px rgba(0,0,0,.18)}.card h2{margin:5px 0 6px;font-size:25px;letter-spacing:-.04em}.card>p{margin:0 0 22px;color:#7e8993;font-size:12px;line-height:1.65}
+    label{display:grid;gap:7px;color:#929da7;font-size:10px;font-weight:800;margin-top:13px}input,textarea{width:100%;border:1px solid var(--line);border-radius:12px;background:#090d12;color:#fff;padding:12px;outline:none}input:focus,textarea:focus{border-color:rgba(217,187,123,.45)}textarea{resize:vertical;min-height:145px;line-height:1.55}
+    .examples{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}.examples button{border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.02);color:#87919b;padding:7px 10px;font-size:9px;cursor:pointer}.examples button:hover{color:#fff;border-color:rgba(255,255,255,.17)}
+    .run{margin-top:17px;width:100%;display:flex;justify-content:space-between;align-items:center;border:0;border-radius:12px;background:linear-gradient(#f5e5bf,#d8b979);color:#171108;padding:13px 14px;font-weight:900;cursor:pointer}.run:hover{filter:brightness(1.04)}
+    .empty{min-height:390px;display:grid;place-items:center;text-align:center;border:1px dashed var(--line);border-radius:18px;background:rgba(0,0,0,.08);color:#66717c;padding:30px}.empty b{display:block;color:#b7c0c8;margin-bottom:8px}
+    .result{display:none;gap:13px}.result.show{display:grid}.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}.stat,.panel{padding:15px;border:1px solid var(--line);border-radius:15px;background:#090d12}.stat small,.panel small{color:#626d77;font-size:8px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}.stat strong{display:block;margin-top:7px;font-size:13px}.panel p{margin:9px 0 0;color:#b0b8c0;font-size:12px;line-height:1.7}.panel.action{border-color:rgba(217,187,123,.16);background:rgba(217,187,123,.035)}.panel.action small{color:var(--gold)}
+    .proof{margin-top:18px;padding:17px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.018);display:flex;justify-content:space-between;gap:18px;align-items:center}.proof p{margin:0;color:#77828d;font-size:10px;line-height:1.5}.proof a{white-space:nowrap;color:var(--gold);font-size:10px;font-weight:900}
+    footer{padding:26px 0 34px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;color:#5e6872;font-size:9px}
+    @media(max-width:850px){.hero,.lab{grid-template-columns:1fr}.hero{padding-top:60px}.flow{grid-template-columns:1fr 1fr 1fr}.proof{align-items:flex-start;flex-direction:column}.proof a{white-space:normal}}
+    @media(max-width:600px){header{height:64px}.hero{padding-top:48px}.flow{grid-template-columns:1fr}.lab{padding-bottom:55px}.stats{grid-template-columns:1fr}footer{flex-direction:column}.toplink{font-size:9px}h1{font-size:52px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="https://yopisimoni.github.io"><span class="mark">SA<span>.</span></span> Simohamed Amara</a>
+      <a class="toplink" href="https://github.com/yopisimoni/ai-hub-tools" target="_blank" rel="noopener">View full implementation ↗</a>
+    </header>
+
+    <section class="hero">
+      <div>
+        <div class="pill"><span class="dot"></span> Public automation proof</div>
+        <p class="eyebrow">Next.js · TypeScript · AI · Supabase · n8n</p>
+        <h1>AI Ops <em>Router.</em></h1>
+        <p class="lede">A live front-end demonstration of a request-triage system. The public repository includes the full server-side implementation with Zod validation, optional Gemini classification, Supabase persistence, and an n8n webhook handoff.</p>
+      </div>
+      <div class="flow">
+        <div class="flowcard"><small>01 / TRIAGE</small><h3>Understand the request</h3><p>Convert unstructured text into category, priority, summary and next action.</p></div>
+        <div class="flowcard"><small>02 / PERSIST</small><h3>Store structured data</h3><p>The full implementation includes a server-side Supabase REST persistence pattern.</p></div>
+        <div class="flowcard"><small>03 / ROUTE</small><h3>Trigger automation</h3><p>An importable n8n workflow demonstrates downstream priority routing.</p></div>
+      </div>
+    </section>
+
+    <section class="lab">
+      <form class="card" id="triage-form">
+        <p class="eyebrow">Try the workflow</p>
+        <h2>Submit a business request</h2>
+        <p>This live page uses the same deterministic fallback logic included in the full Next.js implementation, so no secret keys are exposed in the browser.</p>
+        <label>Name<input id="name" value="Demo visitor" required></label>
+        <label>Email<input id="email" type="email" value="demo@example.com" required></label>
+        <label>Request<textarea id="request" minlength="12" required>A potential customer wants a quote for a multilingual marketplace and needs a call this week.</textarea></label>
+        <div class="examples">
+          <button type="button" data-example="sales">Sales lead</button>
+          <button type="button" data-example="tech">Technical issue</button>
+          <button type="button" data-example="content">Content request</button>
+        </div>
+        <button class="run" type="submit"><span>Run triage</span><span>→</span></button>
+      </form>
+
+      <div class="card">
+        <p class="eyebrow">Structured result</p>
+        <h2>Automation output</h2>
+        <p>Category, priority, destination and recommended action are produced from the request.</p>
+        <div class="empty" id="empty"><div><b>Waiting for a request</b>Submit the form to see the routing result.</div></div>
+        <div class="result" id="result">
+          <div class="stats">
+            <div class="stat"><small>Category</small><strong id="category"></strong></div>
+            <div class="stat"><small>Priority</small><strong id="priority"></strong></div>
+            <div class="stat"><small>Destination</small><strong id="destination"></strong></div>
+            <div class="stat"><small>Mode</small><strong>Safe public demo</strong></div>
+          </div>
+          <div class="panel"><small>Summary</small><p id="summary"></p></div>
+          <div class="panel action"><small>Recommended next action</small><p id="action"></p></div>
+          <div class="proof"><p>The public repository contains the real Next.js API route, AI-provider path, Supabase SQL schema and n8n workflow JSON.</p><a href="https://github.com/yopisimoni/ai-hub-tools" target="_blank" rel="noopener">Inspect the code ↗</a></div>
+        </div>
+      </div>
+    </section>
+
+    <footer><span>AI Ops Router · Engineering proof by Simohamed Amara</span><a href="https://yopisimoni.github.io">Portfolio ↗</a></footer>
+  </div>
+
+<script>
+const examples={
+  sales:"A potential customer wants a quote for a multilingual marketplace and needs a call this week.",
+  tech:"Checkout is failing on mobile Safari after yesterday's deployment and customers cannot complete payment.",
+  content:"We need five LinkedIn posts from our latest product announcement, ready for review before publishing."
+};
+document.querySelectorAll("[data-example]").forEach(btn=>btn.addEventListener("click",()=>document.getElementById("request").value=examples[btn.dataset.example]));
+
+function classify(request){
+  const text=request.toLowerCase();
+  const has=list=>list.some(word=>text.includes(word));
+  if(has(["down","outage","cannot pay","can't pay","payment failing","security","breach","production broken"])){
+    return {category:"Production / Technical Incident",priority:"URGENT",destination:"Engineering · Incident queue",summary:"A production-impacting technical issue needs immediate investigation.",action:"Capture reproduction details and recent changes, notify the technical owner, and begin incident triage before unrelated changes."};
+  }
+  if(has(["quote","customer","client","demo","proposal","sales","lead"])){
+    return {category:"Sales / Opportunity",priority:"HIGH",destination:"Sales · Qualified leads",summary:"A potential customer or commercial opportunity requires a timely response.",action:"Create a qualified lead record, summarize the requested scope, and schedule a response with the relevant commercial owner."};
+  }
+  if(has(["bug","error","failing","broken","api","deployment","checkout","mobile","website"])){
+    return {category:"Technical Request",priority:"HIGH",destination:"Engineering · Triage",summary:"A technical issue or implementation request needs engineering review.",action:"Capture the environment, reproduction steps and expected behavior, then assign the item to engineering for scoped investigation."};
+  }
+  if(has(["post","content","linkedin","article","newsletter","social"])){
+    return {category:"Content / Marketing",priority:"MEDIUM",destination:"Marketing · Content queue",summary:"A content or publishing request should enter the editorial workflow.",action:"Extract deliverables, channel, deadline and approval owner, then route the request into the content review queue."};
+  }
+  return {category:"General Operations",priority:"MEDIUM",destination:"Operations · General queue",summary:"A general business request requires structured review and assignment.",action:"Confirm the desired outcome, owner, deadline and dependencies before assigning the request to the appropriate operations queue."};
+}
+
+document.getElementById("triage-form").addEventListener("submit",event=>{
+  event.preventDefault();
+  const value=document.getElementById("request").value.trim();
+  if(value.length<12)return;
+  const r=classify(value);
+  ["category","priority","destination","summary"].forEach(id=>document.getElementById(id).textContent=r[id]);
+  document.getElementById("action").textContent=r.action;
+  document.getElementById("empty").style.display="none";
+  document.getElementById("result").classList.add("show");
+});
+</script>
+</body>
+</html>
