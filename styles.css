@@ -609,3 +609,53 @@ a:focus-visible,.button:focus-visible{
   outline-offset:4px;
   border-radius:10px;
 }
+
+
+/* Contact action reliability */
+button.button,button.email-link{
+  font:inherit;
+  cursor:pointer;
+  -webkit-appearance:none;
+  appearance:none;
+}
+button.button{
+  border:1px solid #29313b;
+}
+.copy-email{
+  color:#dce1e8;
+}
+.email-copy-link{
+  border:0;
+  background:transparent;
+  padding:0;
+  color:#777f88;
+  transition:color .2s ease;
+}
+.email-copy-link:hover{
+  color:var(--accent-bright);
+}
+.copy-toast{
+  position:fixed;
+  z-index:2000;
+  left:50%;
+  bottom:28px;
+  transform:translate(-50%,18px);
+  opacity:0;
+  pointer-events:none;
+  padding:10px 14px;
+  border:1px solid rgba(216,185,121,.2);
+  border-radius:12px;
+  background:rgba(10,12,15,.9);
+  color:#f1e3c2;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:.02em;
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  box-shadow:0 18px 45px rgba(0,0,0,.35);
+  transition:opacity .2s ease,transform .2s ease;
+}
+.copy-toast.show{
+  opacity:1;
+  transform:translate(-50%,0);
+}
