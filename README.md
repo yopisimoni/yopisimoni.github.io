@@ -1,55 +1,38 @@
-# Simohamed Amara — Developer & Digital Builder
-
-I build practical digital products at the intersection of **web development, automation, AI workflows, lead generation, and growth systems**.
-
-My work focuses on turning an idea or business problem into a working system: the interface, the workflow behind it, the analytics, and the iteration that follows.
-
-## Selected work
-
-### MyFastOffer4U
-UK property seller information and lead-generation platform combining conversion-focused frontend development, SEO architecture, analytics, referral workflows, and operational tracking.
-
-Live project: https://myfastoffer4u.com
-
-### HUG Cafe QR Ordering
-Mobile-first café ordering experience designed around QR access, menu browsing, cart interactions, order confirmation, and an administrative workflow.
-
-### AI Tools Hub
-Community-oriented AI tools discovery prototype for finding, ranking, and discussing useful AI products.
-
-Repository: https://github.com/yopisimoni/ai-hub-tools
-
-### Aesthetic Social Studio
-Service-business validation project combining prospect research, personalized outreach, portfolio assets, landing-page development, and conversion tracking.
-
-Repository: https://github.com/yopisimoni/aesthetic-social-studio
-
-### Mouna Cosmetics
-Modern cosmetics storefront prototype built with Next.js, React, TypeScript, and Tailwind CSS.
-
-Repository: https://github.com/yopisimoni/mouna-cosmetics
-
-## What I work with
-
-- HTML, CSS, JavaScript
-- Next.js, React, TypeScript
-- Tailwind CSS
-- APIs and automation workflows
-- GitHub and GitHub Actions
-- Analytics, SEO, and conversion tracking
-- AI-assisted product and content workflows
-
-## Portfolio
+# Simohamed Amara — Full-Stack Developer & AI Automation Builder
 
 This repository powers my public portfolio:
 
-https://yopisimoni.github.io
+**https://yopisimoni.github.io**
 
-## Current focus
+I build practical digital products and the systems behind them — frontend applications, APIs, automation workflows, analytics, technical SEO, WordPress systems, and AI-assisted operations.
 
-Building small, useful systems that solve real business problems and can be tested with real users instead of remaining as ideas.
+## Core areas
 
----
+- **Product engineering:** TypeScript, JavaScript, React, Next.js, Tailwind, responsive UX
+- **Data & integrations:** REST APIs, Supabase, webhooks, forms, lead routing
+- **Automation & AI:** n8n, Docker, API orchestration, AI-assisted workflows
+- **Growth engineering:** GA4, Search Console, technical SEO, conversion tracking
+- **Web operations:** WordPress, DNS, redirects, deployment QA, GitHub Actions
+- **Technical research:** debugging, bug reproduction, regression testing, patch analysis
 
-**Simohamed Amara**  
-Developer · Automation · AI Workflows · Digital Systems
+## Selected products
+
+- **MyFastOffer4U** — UK property seller platform with lead capture, partner referral workflows, analytics, and SEO infrastructure
+- **HUG Cafe QR Ordering** — Next.js / TypeScript mobile ordering application with admin workflows
+- **MarocVows** — multilingual Moroccan wedding discovery marketplace
+- **MyFastOffer4U France** — localized consumer guidance product
+- **Content Automation Engine** — modular AI-assisted content and publishing workflow
+
+## Public projects
+
+- https://github.com/yopisimoni/marocvows
+- https://github.com/yopisimoni/MyFastOffer4U-France
+- https://github.com/yopisimoni/ai-hub-tools
+- https://github.com/yopisimoni/aesthetic-social-studio
+- https://github.com/yopisimoni/mouna-cosmetics
+
+## Contact
+
+Portfolio: **https://yopisimoni.github.io**  
+GitHub: **https://github.com/yopisimoni**  
+Email: **simohamed.amara@gmail.com**
