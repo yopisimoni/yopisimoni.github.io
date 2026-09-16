@@ -1,16 +1,16 @@
-# Simohamed Amara — Full-Stack Developer & AI Automation Builder
+# Simohamed Amara — AI Automation & Full-Stack Developer
 
 This repository powers my public portfolio:
 
 **https://yopisimoni.github.io**
 
-I build practical digital products and the systems behind them — frontend applications, APIs, automation workflows, analytics, technical SEO, WordPress systems, and AI-assisted operations.
+I build AI-assisted workflow automations, API integrations, and the full-stack product interfaces around them — with deployment, analytics, and practical operational reliability included.
 
 ## Core areas
 
-- **Product engineering:** TypeScript, JavaScript, React, Next.js, Tailwind, responsive UX
+- **AI automation:** workflow orchestration, human-review loops, routing, alerts, handoffs
 - **Data & integrations:** REST APIs, Supabase, webhooks, forms, lead routing
-- **Automation & AI:** n8n, Docker, API orchestration, AI-assisted workflows
+- **Product engineering:** TypeScript, JavaScript, React, Next.js, Tailwind, responsive UX
 - **Growth engineering:** GA4, Search Console, technical SEO, conversion tracking
 - **Web operations:** WordPress, DNS, redirects, deployment QA, GitHub Actions
 - **Technical research:** debugging, bug reproduction, regression testing, patch analysis
