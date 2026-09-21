@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Live estate-agent lead-response automation demo by Simohamed Amara — submit a test enquiry to see how a lead can be captured, logged and alerted automatically.">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#09111d">
+  <link rel="canonical" href="https://yopisimoni.github.io/estate-agent-automation-demo.html">
+  <title>Estate Agent Lead Automation Demo — Simohamed Amara</title>
+  <style>
+    :root{color-scheme:dark;--bg:#07101b;--panel:#0e1a2a;--panel2:#122238;--text:#eef4ff;--muted:#9fb0c8;--line:#233650;--accent:#70a5ff;--ok:#77d4a6;--shadow:0 24px 80px rgba(0,0,0,.34)}
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 15% 10%,rgba(79,131,255,.18),transparent 34%),linear-gradient(180deg,#07101b 0%,#09121f 100%);color:var(--text);min-height:100vh}
+    a{color:inherit}.wrap{width:min(1120px,calc(100% - 32px));margin:auto}.top{display:flex;justify-content:space-between;align-items:center;padding:24px 0 8px}.brand{font-weight:800;letter-spacing:-.03em}.brand span{color:var(--accent)}.back{color:var(--muted);text-decoration:none;font-size:14px}.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:34px;align-items:start;padding:54px 0 70px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:#aac6ff;font-weight:800}.hero h1{font-size:clamp(40px,6vw,72px);line-height:.98;letter-spacing:-.055em;margin:14px 0 20px;max-width:760px}.hero h1 em{font-style:normal;color:#a8c5ff}.lead{font-size:19px;line-height:1.65;color:var(--muted);max-width:700px}.proof{display:grid;gap:12px;margin:30px 0}.proof div{display:flex;gap:12px;align-items:flex-start;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.08)}.proof b{min-width:28px;color:var(--ok)}.proof span{color:#cbd7e8}.note{margin-top:26px;padding:18px 20px;border:1px solid var(--line);border-radius:18px;background:rgba(14,26,42,.72);color:var(--muted);font-size:14px;line-height:1.6}.card{background:linear-gradient(180deg,rgba(18,34,56,.98),rgba(11,23,39,.98));border:1px solid var(--line);border-radius:24px;padding:26px;box-shadow:var(--shadow);position:sticky;top:18px}.card h2{font-size:24px;margin:0 0 6px}.card p{color:var(--muted);margin:0 0 24px;line-height:1.55}.field{display:grid;gap:8px;margin-bottom:16px}.field label{font-size:13px;color:#c8d6ea;font-weight:700}.field input,.field textarea{width:100%;border:1px solid #2b4161;background:#091523;color:var(--text);border-radius:12px;padding:13px 14px;font:inherit;outline:none}.field input:focus,.field textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(112,165,255,.12)}.field textarea{min-height:104px;resize:vertical}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}.submit{width:100%;border:0;border-radius:13px;padding:14px 18px;background:linear-gradient(135deg,#79a9ff,#4f7fe4);color:white;font:inherit;font-weight:800;cursor:pointer}.submit:disabled{opacity:.6;cursor:wait}.privacy{font-size:12px!important;margin:12px 0 0!important}.success{display:none;margin-top:16px;padding:16px;border-radius:14px;border:1px solid rgba(119,212,166,.35);background:rgba(119,212,166,.1);color:#c9f5df;line-height:1.55}.success.show{display:block}.workflow{margin:8px 0 70px}.workflow h2{font-size:30px;letter-spacing:-.03em}.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.step{padding:20px;border:1px solid var(--line);border-radius:18px;background:rgba(14,26,42,.62)}.step small{color:#8fb5ff;font-weight:800}.step h3{font-size:17px;margin:10px 0 6px}.step p{color:var(--muted);font-size:14px;line-height:1.5;margin:0}.footer{border-top:1px solid rgba(255,255,255,.08);padding:28px 0 40px;color:var(--muted);font-size:14px}.honeypot{position:absolute;left:-9999px;opacity:0;pointer-events:none}
+    @media(max-width:820px){.hero{grid-template-columns:1fr;padding-top:32px}.card{position:static}.flow{grid-template-columns:1fr 1fr}.top{padding-top:18px}}@media(max-width:560px){.row,.flow{grid-template-columns:1fr}.hero h1{font-size:44px}.wrap{width:min(100% - 22px,1120px)}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <div class="brand">SA<span>.</span> Automation Demo</div>
+      <a class="back" href="https://yopisimoni.github.io/">← Portfolio</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Live workflow proof</p>
+          <h1>See a property enquiry turn into an <em>instant follow-up workflow.</em></h1>
+          <p class="lead">This demo shows the front door of a lightweight estate-agent automation: a lead is captured, structured, logged and surfaced immediately so the team can respond faster.</p>
+
+          <div class="proof">
+            <div><b>01</b><span>Visitor submits a property or valuation enquiry.</span></div>
+            <div><b>02</b><span>Make.com receives and structures the lead through a webhook.</span></div>
+            <div><b>03</b><span>The lead is written into a Google Sheets lead log with a clear status.</span></div>
+            <div><b>04</b><span>The team receives an immediate Gmail alert with the enquiry details.</span></div>
+          </div>
+
+          <div class="note"><strong>Demo only.</strong> Please use test information rather than sensitive personal data. The workflow is designed to demonstrate the automation architecture, not to collect real property instructions.</div>
+        </div>
+
+        <aside class="card">
+          <h2>Send a test lead</h2>
+          <p>Use sample information. You should see a confirmation here after the demo request is sent.</p>
+
+          <form id="demo-form" action="https://hook.eu2.make.com/ih7gkcnxt6dl5ihptacaqj63ohjsessr" method="POST" target="make-response">
+            <div class="honeypot" aria-hidden="true">
+              <label>Company website <input name="website" tabindex="-1" autocomplete="off"></label>
+            </div>
+            <div class="row">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" required maxlength="80" placeholder="Demo Seller">
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" maxlength="40" placeholder="+44 7700 900123">
+              </div>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required maxlength="120" placeholder="demo@example.com">
+            </div>
+            <div class="field">
+              <label for="property_request">Property / request</label>
+              <textarea id="property_request" name="property_request" required maxlength="600" placeholder="Example: I need a valuation for a two-bedroom property and would like a quick response."></textarea>
+            </div>
+            <input type="hidden" name="source" value="Public Portfolio Demo">
+            <input type="hidden" name="demo" value="true">
+            <button class="submit" type="submit">Run the demo →</button>
+            <p class="privacy">Submitting sends the test fields into the demo automation for logging and notification.</p>
+            <div id="success" class="success" role="status" aria-live="polite"><strong>Demo request sent.</strong><br>The automation has received the test lead. In the finished workflow, it is logged and an instant team alert is generated.</div>
+          </form>
+          <iframe name="make-response" title="Automation response" hidden></iframe>
+        </aside>
+      </section>
+
+      <section class="workflow">
+        <p class="eyebrow">What this proves</p>
+        <h2>A small workflow that can sit behind an existing estate-agency website.</h2>
+        <div class="flow">
+          <article class="step"><small>STEP 01</small><h3>Capture</h3><p>Connect an existing contact, valuation or landlord form without rebuilding the site.</p></article>
+          <article class="step"><small>STEP 02</small><h3>Route</h3><p>Send structured fields into Make.com through a webhook and apply business logic.</p></article>
+          <article class="step"><small>STEP 03</small><h3>Log</h3><p>Keep a searchable lead record in Sheets or extend the workflow into a CRM.</p></article>
+          <article class="step"><small>STEP 04</small><h3>Alert</h3><p>Notify the right person immediately by email, with WhatsApp/SMS as optional extensions.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">Built by Simohamed Amara · AI automation · APIs · webhooks · business workflows</footer>
+  </div>
+
+  <script>
+    (() => {
+      const form = document.getElementById('demo-form');
+      const success = document.getElementById('success');
+      const button = form.querySelector('.submit');
+      form.addEventListener('submit', () => {
+        button.disabled = true;
+        button.textContent = 'Sending demo…';
+        setTimeout(() => {
+          success.classList.add('show');
+          button.disabled = false;
+          button.textContent = 'Run another test →';
+          form.querySelector('#property_request').value = '';
+          success.scrollIntoView({behavior:'smooth',block:'nearest'});
+        }, 900);
+      });
+    })();
+  </script>
+</body>
+</html>
